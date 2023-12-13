@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronos</title>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <div class="slots__container">
+            <div class="slot">
+                <p id="seconds">00</p>
+            </div>
+            <div class="slot">
+                <p id="centiseconds">00</p>
+    
+            </div>
+        </div>
+
+        <div class="btn__container">
+            <button class="btns btns__start">Start</button>
+            <button class="btns btns__stop">Stop</button>
+            <button class="btns btns__zero">Zero</button>
+        </div>
+
+    </div>
+
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        p{
+            margin: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10em;
+        }
+
+        .container{
+            padding: 250px;
+            
+        }
+
+        .slots__container, .btn__container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn__container{
+            margin: 10px;
+        }
+
+        .btns{
+            width: 190px;
+            padding: 20px;
+            margin: 5px
+        }
+
+        .slot{
+            margin: 0.4%;
+            width: 300px;
+            height: 300px;
+            border-radius: 1%;
+            border: 4px solid #B7410E;  
+        }
+    </style>
+
+    <script>
+    
+        
+        document.querySelector('.btns__start').addEventListener('click', startTimer);
+        document.querySelector('.btns__stop').addEventListener('click', stopTimer);
+        document.querySelector('.btns__zero').addEventListener('click', resetTimer);
+
+        let centiseconds = 0;
+        let seconds = 0;
+        let timer;
+
+        function updateDisplay() {
+            document.getElementById('centiseconds').innerText = centiseconds.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+
+        function startTimer() {
+            timer = setInterval(updateTimer, 10);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            centiseconds = 0;
+            seconds = 0;
+            updateDisplay();
+        }
+
+        function updateTimer() {
+            centiseconds++;
+            if (centiseconds === 100) {
+                centiseconds = 0;
+                seconds++;
+            }
+            updateDisplay();
+        }
+
+        // miki style ------------------------------------------------------------------------------
+
+        const cronoButtons = document.querySelector('crono__buttons0');
+        const cronoSeconds = document.querySelector('crono__seconds')
+        const cronoMiliseconds = document.querySelector('.crono__miliseconds');
+
+        // funciones
+        let counterSeconds = 0;
+        let counterCentiseconds = 0;
+
+        function startCrono(){
+            setInterval(() => {
+                counter++;
+                
+                if( counterCentiseconds===100){
+                    counterSeconds += 1;
+                    counterCentiseconds
+                }
+
+
+
+
+            }, 1);
+        }
+
+        // llamadas a funcion, eventos, etc.
+        cronoButtons.addEventListener('click', function(e){
+
+            e.target.value === "start" && startCrono();
+            e.target.value === "stop" && stopCrono();
+            e.target.value === "zero" && zeroCrono();
+
+        })
+
+
+
+    </script>
+
+
+</body>
+</html>

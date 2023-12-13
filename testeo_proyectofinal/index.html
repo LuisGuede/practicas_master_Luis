@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+*{
+    padding: 0%;   
+    margin: 0%;
+    border: none;  
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+h1,h2,h3,h4 { 
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+p {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+img{
+    width: 100%;
+    display: block;
+}
+
+
+.flip__card__grid__container {
+    gap: 1%;
+    padding: 2em;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(max(181px, 100%/4), 1fr));
+}   
+
+.flip__card__inner, .flip__card__front, .flip__card__back {
+    width: 100%;
+    height: 100%;
+}
+
+.flip__card {
+    padding: 1em;
+    width: 100%;
+    perspective: 1000px; 
+    background-color: transparent;
+}
+
+.flip__card__inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip__card:hover .flip__card__inner {
+    transform: rotateY(180deg);
+}
+
+.flip__card__front, .flip__card__back {
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;   
+    object-fit: cover;
+}
+
+.flip__card__back {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #26252c;
+    transform: rotateY(180deg);
+    background-image: url("img/MuseoTarot_cartas-23.svg");
+}
+
+.flip__card__back__text{
+    padding: 3em;
+    text-align: center;
+}
+
+.flip__card__back img {
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.hidden {
+    visibility:hidden; 
+    pointer-events: none;
+}
+
+/* Responsive Adaptation (The responsive, is based on the sizes recommended by Google inspector.)*/
+
+/* Desktop 4K - 2560px */
+
+@media screen and (max-width: 2560px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }  
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* full Desktop - 1920px */
+
+@media screen and (max-width: 1920px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }  
+
+    p {
+        font-size: 1rem;
+        padding: 3.5em;
+    }
+}
+
+/* Laptopo L - 1440px */
+
+@media screen and (max-width: 1440px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p {
+        font-size: 1rem;
+        padding: 2em;
+    }   
+}
+
+/* Laptop - 1024px */
+
+@media screen and (max-width: 1024px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p {
+        font-size: 0.67rem;
+        padding: 2.5em;
+    }
+}
+
+/* Tablet L- 768px */
+
+@media screen and (max-width: 768px) {
+
+    .flip__card__grid__container {
+    gap: 0%;
+    }
+
+    p {
+        font-size: 0.67rem;
+        padding: 2.2em;
+    }     
+} 
+
+/* Tablet S - 606px */
+@media screen and (max-width: 606px) {
+
+    .flip__card__grid__container {
+    gap: 0%;
+    }
+
+    p {
+        font-size: 0.7rem;
+        padding: 2em;
+    }   
+} 
+
+/* Mobile L - 425px */
+
+@media screen and (max-width: 425px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+    
+    p{
+        font-size: 1.3rem;
+        padding: 2.1em;
+    }
+}
+
+/* Mobile M - 378px */
+
+@media screen and (max-width: 378px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p { 
+        font-size: 1rem;
+        padding: 2.6em;
+    }
+}
+
+/* Mobile S - 320px */
+
+@media screen and (max-width: 320px) {
+
+    .flip__card__grid__container {
+        gap: 0%;
+    } 
+    
+    p { 
+        font-size: 1rem;
+        padding: 2.5em;
+    }
+} 
+
+</style>
+</head>
+<body>
+
+<section class="flip__card__container">
+
+    <div class="flip__card__grid__container">
+        
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-01.svg" alt="Carta" title="CartaFront">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Simboliza un potencial ilimitado y la posibilidad de una nueva y emocionante aventura. Indica la necesidad de dar un salto de fe en el que no sabes qué esperar</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-02.svg" alt="Carta" title="TheMagician">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Significa que tienes la determinación para hacer realidad tus deseos, eres poderoso, y el mundo exterior seguirá si creas tu mundo interior</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-03.svg" alt="Carta" title="TheHighPristess">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Aconseja seguir la intuición, no solo la razón, recomienda reflexionar y aprender antes de decidir o actuar</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-04.svg" alt="Carta" title="TheEmpress">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text"> Te insta a conectarte con tu lado femenino, fomentando la creatividad y el cuidado propio, busca la belleza y la felicidad, inspirando energía creativa en proyectos</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-05.svg" alt="Carta" title="TheEmperor">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Representa estabilidad masculina y liderazgo, aporta seguridad y conocimiento, exigiendo respeto con autoridad. Superando problemas con planificación y perseverancia</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-06.svg" alt="Carta" title="TheHierophant">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Sugiere seguir convenciones y reglas establecidas, aconseja mantener límites tradicionales en lugar de romper normas, enfocándote en tradiciones, creencias</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-07.svg" alt="Carta" title="TheLovers">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Se refiere a decisiones significativas generando incertidumbre sobre en quién confiar, aconseja evitar la tentación y la ruta fácil</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-08.svg" alt="Carta" title="TheChariot">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Sugiere que es el momento de alcanzar tus deseos con determinación y enfoque, sintiéndote motivado, ambicioso y en control</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-09.svg" alt="Carta" title="Strength">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Simboliza fuerza, coraje y paciencia, indicando que puedes superar obstáculos como el TheChariot. Se aconseja actuar con gracia en lugar de la fuerza bruta</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-10.svg" alt="Carta" title="TheHermit">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Representa un tiempo de crecimiento personal guiado por la sabiduría en busca de la verdad más elevada, a menudo requiriendo soledad y introspección</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-11.svg" alt="Carta" title="WhellofFortune">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Indica suerte, ya sea que creas en el destino o no, las cosas se están alineando a tu favor, brindándote sorprendentes ofertas y nuevas oportunidades</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-12.svg" alt="Carta" title="Justice">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">simboliza causa, efecto, y pensamiento y acción equilibrados. En casos de injusticia o daño, la Justicia llega para restablecer el equilibrio y el orden</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-13.svg" alt="Carta" title="TheHangedMan">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Representa la espera inevitable en la vida, aunque no siempre nos gusta quedarnos en un limbo, a veces es necesario, incluso si implica sacrificios</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-14.svg" alt="Carta" title="Death">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Señala el cierre de un capítulo, dejar atrás el pasado y eliminar lo innecesario, marcando una transición entre fases de la vida</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-15.svg" alt="Carta" title="Temperance">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Evita extremos y practica la paciencia en situaciones complicadas, no reacciones de inmediato; la Templanza es una habilidad que mejora con la práctica</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-16.svg" alt="Carta" title="TheDevil">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">La carta de la ilusión y advierte sobre el peligro de la adicción, enfócate en lo que realmente importa en lugar de satisfacer deseos excesivos</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-17.svg" alt="Carta" title="TheTower">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Simboliza destrucción y cambios drásticos, antes de un nuevo comienzo, enfrenta la verdad sobre la situación</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-18.svg" alt="Carta" title="TheStar">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Simboliza abundantes bendiciones atraídas por nuestras creencias y pensamientos, a menudo sigue a cambios difíciles o eventos traumáticos</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-19.svg" alt="Carta" title="TheMoon">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Advierte sobre dejar que la imaginación y emociones dominen tu vida, enfrenta la realidad, confía en tu intuición para encontrar liberación de lo que te ata</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-20.svg" alt="Carta" title="TheSun">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Indica mejoras y positividad después de tiempos difíciles, Nos anima a ver el lado positivo y aprender de las dificultades como herramientas de crecimiento</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-21.svg" alt="Carta" title="Judgement">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Reflexiona si tus acciones se alinean con tus valores y propósito, Tómate tiempo para pensar antes de seguir adelante; será beneficioso en última instancia</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-22.svg" alt="CartaBack" title="TheWorld">
+                </div>
+                <div class="flip__card__back">
+                    <p class="flip__card__back__text">Significa éxito y logro, tu proyecto ha concluido, alcanzando tus metas a pesar de las dificultades, estás en el lugar adecuado, haciendo lo correcto</p>
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Back card added simply to make the page symmetrical. -->
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-23.svg" alt="CartaBack" title="Back">
+                </div>
+                <div class="flip__card__back">
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flip__card">
+            <div class="flip__card__inner">
+                <img class="hidden" src="img/MuseoTarot_cartas-01.svg" alt="hidden"> <!-- Duplicate image to avoid collision with 3D effect -->
+                <div class="flip__card__front">
+                    <img src="img/MuseoTarot_cartas-23.svg" alt="CartaBack" title="Back">
+                </div>
+                <div class="flip__card__back">
+                    <img> <!-- this is the back image of my card -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

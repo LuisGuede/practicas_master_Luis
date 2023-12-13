@@ -1,0 +1,820 @@
+/* ----------- Thes are my Setting ----------- */
+
+*{
+    padding: 0%;   
+    margin: 0%;
+    border: none;  
+    box-sizing: border-box;
+}
+
+/* My global colors*/
+:root { 
+    --frist-color: #2b1825;
+    --second-dark-color: #392433;
+    
+    --white-color: #FEFEFE;
+    --black-color: #111121;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--frist-color);
+    
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+li{
+    list-style: none;
+}
+
+button{
+    padding: 10px; /* for more reach in responsive */
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+h1,h2,h3,h4, li{ 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p { 
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+/* ----------- Thes is the end of my Setting ----------- */
+
+/* ----------- This is my CSS Header ----------- */
+
+.container{
+    position: relative;
+}
+
+.header, .footer {
+    font-size: 1rem;
+}
+
+.header{
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    /* position: fixed; for my scrolling effect */
+    position: fixed;
+    padding: 2em 4em;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--second-dark-color);
+}
+
+.header__logo{
+    width: 450px; 
+}
+
+.header__responsiveMenue__Button{
+    width: 60px;
+    display: none;
+}
+
+.header__menu{
+    gap: 40px;
+    display: flex;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.header__responsiveMenue{
+    z-index: 1; /* to prevent it from being under the cards */
+    left: 0;
+    color: var(--white-color);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    position: relative;
+    position: absolute;
+    background-color: var(--second-dark-color);
+}
+
+.header__responsiveMenue__menu{
+    line-height: 70px;
+    padding-left: 80px;
+    padding-top: 100px;
+}
+
+.header__responsiveMenue__close{
+    width: 65px;
+    position: absolute;
+    top: 40px;
+    right: 77px;
+}
+
+.is__active{
+    display: block;
+}
+
+/* ----------- This is the end my CSS Header ----------- */
+
+/* ----------- This is my CSS body (my cards section) ----------- */
+
+.flip__card__container{
+    padding-top: 10em;
+}
+
+.flip__card__grid__container {
+    gap: 1%;
+    padding: 2em;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(max(181px, 100%/4), 1fr));
+}   
+
+.flip__card__inner, .flip__card__front, .flip__card__back {
+    width: 100%;
+    height: 100%;
+}
+
+.flip__card {
+    padding: 1em;
+    width: 100%;
+    perspective: 1000px; /* for some reason this value works better in px than em and en */
+    background-color: transparent;
+}
+
+.flip__card__inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip__card:hover .flip__card__inner {
+    transform: rotateY(180deg);
+}
+
+.flip__card__front, .flip__card__back {
+    top:0;
+    cursor: pointer;
+    object-fit: cover;
+    position: absolute;
+    backface-visibility: hidden; 
+    -webkit-backface-visibility: hidden;  
+}
+
+.flip__card__back {
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotateY(180deg);
+    background-color: var(--frist-color);
+    background-image: url("../img/MuseoTarot_cartas-23.svg");
+}
+
+.flip__card__back__text{
+    text-align: center;
+}
+
+.flip__card__back img {
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.hidden {
+    visibility:hidden; 
+    pointer-events: none;
+}
+
+/* ----------- This is the end of my CSS body (my cards section) ----------- */
+
+/* ----------- This is my CSS footer ----------- */
+
+.footer{
+    width: 100%;
+    display: flex;
+    padding: 4em 7em;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--second-dark-color);
+}
+
+.footer__logo{
+    width: 30rem; 
+}
+
+.footer__menu{
+    gap: 5rem;
+    display: flex;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+/* ----------- This is the end of my CSS footer ----------- */
+
+/* Responsive Adaptation (The responsive, is based on the sizes recommended by Google inspector.)*/
+
+/* Desktop 4K - 2560px */
+
+@media screen and (max-width: 2560px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 3em 4em;
+    }
+
+    .header__menu{
+        gap: 5rem;
+    }
+
+    .header__logo {
+        width: 50rem; 
+    }
+
+    li{
+        font-size: 2rem;
+    }
+
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container{
+        padding-top: 15em;
+        padding-bottom: 1em;
+    }
+    
+    .flip__card__grid__container {
+        gap: 0%;
+    }  
+
+    p {
+        font-size: 1.8rem;
+        padding: 3.5em;
+    }
+
+    /* End of Responsive Cards*/
+
+    /* Responsive footer*/
+
+    .footer{
+        padding: 4em 7em;
+    }
+    
+    li{
+        font-size: 2rem;
+    }
+    
+    /* End of Responsive footer*/
+
+}
+
+/* full Desktop - 1920px */
+
+@media screen and (max-width: 1920px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 2em 4em;
+    }
+
+    .header__menu{
+        gap: 5rem;
+    }
+
+    .header__logo {
+        width: 40rem; 
+    }
+
+    li{
+        font-size: 1.5rem;
+    }
+
+    /* End of Responsive Header */
+    
+    /* Responsive Cards*/
+
+    .flip__card__container{
+        padding-top: 11em;
+    }
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }  
+
+    p {
+        font-size: 1.3rem;
+        padding: 3.5em;
+    }
+
+    /* End of Responsive Cards*/
+
+    /* Responsive footer*/
+    
+    li{
+        font-size: 2rem;
+    }
+    
+    /* End of Responsive footer*/
+}
+
+/* Laptopo L - 1440px */
+
+@media screen and (max-width: 1440px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 2em 4em;
+    }
+
+    .header__menu{
+        gap: 1.5rem;
+    }
+
+    .header__logo {
+        width: 27rem; 
+    }
+
+    li{
+        font-size: 1rem;
+    }
+
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container{
+        padding-top: 8em;
+        padding-bottom: 0.1em;
+    }
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p {
+        font-size: 1rem;
+        padding: 2em;
+    } 
+    
+    /* End of Responsive Cards*/
+
+    /* Responsive footer*/
+
+    .footer{
+        padding: 3em 7em;
+    }
+
+    .footer__logo{
+        width: 20rem; 
+    }
+    
+    li{
+        font-size: 1rem;
+    }
+
+    .footer__menu{
+        gap: 4rem;
+    }
+    
+    /* End of Responsive footer*/
+    
+}
+
+/* Laptop - 1024px */
+
+@media screen and (max-width: 1024px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 2em 3em;
+    }
+
+    .header__menu{
+        gap: 1.4rem;
+    }
+
+    .header__logo {
+        width: 20rem; 
+    }
+
+    li{
+        font-size: 1rem;
+    }
+
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container{
+        padding-top: 6em;
+    }
+
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p {
+        font-size: 0.67rem;
+        padding: 2.5em;
+    }
+
+    /* End of Responsive Cards*/  
+
+    /* Responsive footer*/
+
+    .footer{
+        padding: 3em 7em;
+    }
+
+    .footer__logo{
+        width: 15rem; 
+    }
+    
+    li{
+        font-size: 1rem;
+    }
+
+    .footer__menu{
+        gap: 2rem;
+    }
+    
+    /* End of Responsive footer*/
+}
+
+/* Tablet L- 768px */
+
+@media screen and (max-width: 768px) {
+
+    /* My burger menu starts here*/
+
+    .header__menuContainer{
+        display: none;
+    }
+
+    .header__responsiveMenue__Button{
+        display: block;
+        margin-left: 2em;
+        width: 4rem;
+    }
+
+    /* My burger menu end here*/
+
+    /* Responsive Header */
+
+    .header {
+        padding: 1.5em 3em;
+    }
+
+    .header__logo {
+        width: 30rem; 
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .header__responsiveMenue__menu {
+        line-height: 6em;
+        padding-left: 3em;
+        padding-top: 7em;
+    }
+
+    .header__responsiveMenue__menu li {
+        font-size: 1.6rem;
+    }
+
+    .header__responsiveMenue__close {
+        width: 5rem;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+    
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container{
+        padding-top: 7.5em;
+    }
+
+    .flip__card__grid__container {
+    gap: 0%;
+    }
+
+    p {
+        font-size: 0.67rem;
+        padding: 2.2em;
+    }
+
+    /* End of Responsive Cards*/  
+
+    /* Responsive footer*/
+
+    .footer{
+        display: flex;
+        padding: 1.5em 7em;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .footer__logo{
+        width: 20rem; 
+        padding: 0.5em;
+    }
+    
+    li{
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+
+    .footer__menu{
+        gap: 1rem;
+    }
+    
+    /* End of Responsive footer*/
+} 
+
+/* Tablet S - 606px */
+
+@media screen and (max-width: 606px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 1em 2.5em;
+    }
+
+    .header__logo {
+        width: 25rem; 
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .header__responsiveMenue__Button {
+        margin-left: 2em;
+        width: 4rem;
+    }
+
+    .header__responsiveMenue__menu {
+        line-height: 6em;
+        padding-left: 3em;
+        padding-top: 7em;
+    }
+
+    .header__responsiveMenue__menu li {
+        font-size: 1.6rem;
+    }
+
+    .header__responsiveMenue__close {
+        width: 5rem;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+
+    /* End of Responsive Header */
+
+     /* Responsive Cards*/
+
+    .flip__card__container{
+        padding-top: 5em;
+    }
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p {
+        font-size: 0.7rem;
+        padding: 2em;
+    }
+
+     /* End of Responsive Cards*/ 
+
+    /* Responsive footer*/
+
+    /* no changes, note to me :768px is taking control over 606px in the footer. */
+    
+    /* End of Responsive footer*/
+} 
+
+/* Mobile L - 425px */
+
+@media screen and (max-width: 425px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 1em 1.5em;
+    }
+
+    .header__logo {
+        width: 30rem; 
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .header__responsiveMenue__Button {
+        margin-left: 2em;
+        width: 6rem;
+    }
+
+    .header__responsiveMenue__menu {
+        line-height: 6em;
+        padding-left: 2em;
+        padding-top: 7em;
+    }
+
+    .header__responsiveMenue__menu li {
+        font-size: 2rem;
+    }
+
+    .header__responsiveMenue__close {
+        width: 4.5rem;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container {
+        padding-top: 5em;
+    }
+
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+    
+    p {
+        font-size: 1.3rem;
+        padding: 2.1em;
+    }
+
+    /* End of Responsive Cards*/
+
+    /* Responsive footer*/
+
+    .footer{
+        padding: 1.5em 5em;
+    }
+
+    /* End of Responsive footer*/
+    
+}
+
+/* Mobile M - 378px */
+
+@media screen and (max-width: 378px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 1em 1.5em;
+    }
+
+    .header__logo {
+        width: 30rem; 
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .header__responsiveMenue__Button {
+        margin-left: 2em;
+        width: 7rem;
+    }
+
+    .header__responsiveMenue__menu {
+        line-height: 7em;
+        padding-left: 2em;
+        padding-top: 7em;
+    }
+
+    .header__responsiveMenue__menu li {
+        font-size: 2rem;
+    }
+
+    .header__responsiveMenue__close {
+        width: 4.5rem;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container {
+        padding-top: 4em;
+    }
+
+    .flip__card__grid__container {
+        gap: 0%;
+    }
+
+    p { 
+        font-size: 1rem;
+        padding: 2.6em;
+    }
+
+    /* End of Responsive Cards*/
+
+    /* Responsive footer*/
+
+    .footer__logo{
+        width: 17rem; 
+    }
+
+    .footer{
+        padding: 1.5em 3em;
+    }
+
+    /* End of Responsive footer*/
+}
+
+/* Mobile S - 320px */
+
+@media screen and (max-width: 320px) {
+
+    /* Responsive Header */
+
+    .header {
+        padding: 1em 1.5em;
+    }
+
+    .header__logo {
+        width: 30rem; 
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .header__responsiveMenue__Button {
+        margin-left: 2em;
+        width: 8rem;
+    }
+
+    .header__responsiveMenue__menu {
+        line-height: 5em;
+        padding-left: 2em;
+        padding-top: 7em;
+    }
+
+    .header__responsiveMenue__menu li {
+        font-size: 1.5rem;
+    }
+
+    .header__responsiveMenue__close {
+        width: 4rem;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+
+    /* End of Responsive Header */
+
+    /* Responsive Cards*/
+
+    .flip__card__container {
+        padding-top: 5em;
+    }
+
+    .flip__card__grid__container {
+        gap: 0%;
+    } 
+    
+    p { 
+        font-size: 1rem;
+        padding: 2.5em;
+    }
+
+    /* End of Responsive Cards*/ 
+
+    /* Responsive footer*/
+
+    /* no changes, note to me : 378px is taking control over 320px in the footer. */
+    
+    /* End of Responsive footer*/
+} 

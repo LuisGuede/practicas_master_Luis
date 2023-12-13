@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body>
+
+    <section class="section3">
+    <div class="div2">
+        <button class="btn1">click</button>
+    </div>
+    </section>
+
+
+    <script>
+
+        // const options= {
+        //     once: true,
+        //     capture: true
+        // }
+
+        // // add event listener capturo boton
+        // const btn1 = document.querySelector('.btn1');
+
+        // // defino la funcion
+        // counter = 0;
+        // function longMessage(){
+        //     conter ++;
+        //     if(conter == 3) btn1.removeEventListener('click', longMessage);
+        //     console.log('lanzando evento!!!!');
+        // }
+
+        // // Le paso el callback
+        // btn1.addEventListener('click', longMessage);
+
+        // // quito event listener
+        // // btn1.removeEventListener('click', longMessage);
+
+        // ----------------------------------------------------------------------
+
+        // capturo boton
+        const btn1 = document.querySelector('.btn1');
+        const div1 = document.querySelector('.div2');
+        const section1 = document.querySelector('.section3');
+
+        function btnLog(){
+            console.log('btn 1');
+        }
+
+        // puedo detener la propagacion de este envento cone esto:
+
+        // function btnLog(e){
+        //     console.log('btn 1');
+        //     e.stopPropagation();
+        // }
+
+        function divLog(){
+            console,log('div 2');
+        }
+
+        function sectionLog(){
+            console,log('section 3');
+        }
+
+        btn1.addEventListener('click', btnLog);
+        div2.addEventListener('click', divLog);
+        section3.addEventListener('click', sectionLog);
+
+
+
+    </script>
+
+    <!-- hosting pregunta de examen!! -->
+
+</body>
+</html>

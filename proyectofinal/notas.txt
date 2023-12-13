@@ -1,0 +1,9 @@
+- Optimizar el codigo que no nesecito en el responsive
+
+- Areglar el header (px a em y rem)
+
+- favicon
+
+- buscar alguna manera de ver mi web en mi phone para revisar el responsive
+
+- Organizar las imge (la carpeta vectores dentro de img)

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espirales</title>
+</head>
+
+<body>
+
+    <style>
+        body{
+            display: flex;
+        }
+    </style>
+
+    <canvas id="myCanvas" width="400" height="400" style="border: 2px solid black;"></canvas>
+
+    <script>
+
+        // Capturo Canvas
+        const myCanvas = document.getElementById("myCanvas");
+
+        // le creo un contexto
+        const ctx = myCanvas.getContext("2d");
+
+
+
+        // // Rectangulo
+        // ctx.beginPath(); // limpio subtrazos e inicio trazo nuevo
+
+        // ctx.lineWith = "1"; // ancho del trazo
+
+        // ctx.strokeStyle = "#F00"; // color
+
+        // ctx.rect(5.5,9,65,44) // crear el rectangulo
+
+        // ctx.stroke() // accion de pintar
+
+
+
+        // // Circulo
+        // ctx.beginPath(); // limpio subtrazos e inicio trazo nuevo
+
+        // ctx.lineWith = "2"; // ancho del trazo
+
+        // ctx.strokeStyle = "#0F0"; // color
+
+        // // ctx.arc('x', 'y', 'radio', 'angulo de inicio', 'angulo de finalizacion')
+
+        // ctx.arc(100, 100, 20, 0, 2*Math.PI);
+
+        // ctx.stroke() // accion de pintar
+
+
+
+        // // Circulo con cambios
+
+        // for (let index = 0; index < 20; index++){
+        //     const centerX = Math.floor(Math.random()*400 + 1);
+        //     const centerY = Math.floor(Math.random()*400 + 1);
+        //     ctx.beginPath(); // limpio subtrazos e inicio trazo nuevo
+
+        //     ctx.lineWith = "2"; // ancho del trazo
+
+        //     ctx.strokeStyle = "#0F0"; // color
+
+        //     // ctx.arc('x', 'y', 'radio', 'angulo de inicio', 'angulo de finalizacion')
+
+        //     ctx.arc(centerX, centerY, 20, 0, 2*Math.PI);
+
+        //     ctx.stroke() // accion de pintar
+        // }
+
+
+        // // Trazo
+        // ctx.beginPath(); // limpio subtrazos e inicio trazo nuevo
+
+        // ctx.lineWith = "2"; // ancho del trazo
+
+        // ctx.strokeStyle = "#00F"; // color
+
+        // ctx.moveTo(100, 200);
+        // ctx.lineTo(300, 300);
+
+        // ctx.stroke() // accion de pintar
+
+
+        // Espiral
+
+        // defino los centros
+        let centerX = 200;
+        let centerY = 200;
+
+        // Posiciono el pincel en los centros definidos
+        ctx.moveTo(centerX, centerY)
+
+        // cambio color del backgorund
+        ctx.fillstyle= "black";
+        ctx.fillRect(0,0,myCanvas.width, myCanvas.height);
+
+        // Para,etros para nutrir el bucle y la espiral
+        // espacio entre lineas de la espiral
+        let gap = 2;
+
+        // incremento/resolucion de la espiral
+        let increment = 1;
+
+        // valor de incremento aplicado ala formula
+        let theta = increment;
+
+        while(theta < 40*Math.PI){
+
+            // la magia
+            let newX = centerX + theta * Math.cos(theta)* gap;
+            let newY = centerY + theta * Math.sin(theta)* gap;
+
+            ctx.strokeStyle = "#865DFF";
+            ctx.lineTo(newX, newY);
+
+            // incremento theta en base el incremento para que la espiral avance
+            theta = theta + increment;
+        }
+
+        ctx.stroke(); // accion de pintar
+
+
+
+    </script>
+
+</body>
+</html>
+</html>

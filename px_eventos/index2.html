@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        p{
+            position: fixed;
+            background-color: aqua;
+            width: 100%;
+            padding: 30px;
+        }
+    </style>
+
+<section style="height: 10000px">
+    <p class="menu">Menu imaginario</p>
+
+</section>
+
+<script>
+    const menu = document.querySelector('p')
+
+    lastScrollTop = 0;
+    window.addEventListener('scroll', function(){
+        let scrolltop = window.pageYOffset
+
+        if( scrolltop > lastScrollTop) {
+            menu.style.display=" none";
+        }
+        else if (lastScrollTop > scrolltop){
+            menu.style.display=" block";
+        }
+
+        lastScrollTop = scrolltop
+    })
+
+</script>
+
+</body>
+</html>
