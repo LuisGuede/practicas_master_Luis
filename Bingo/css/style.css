@@ -1,0 +1,42 @@
+
+*{
+  padding: 10px;   
+  margin: 0%;
+  border: none;  
+  box-sizing: border-box;
+}
+
+
+.title{
+  color: brown;
+  background-color: #ffa500;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tablon, td{
+  border: 2px solid rgb(0, 0, 0);
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+td, th {
+  width: 150px;
+  height: 100px;
+}
+
+button{
+
+  margin-top: 20px;
+  background-color: #ffa500;
+  border: 2px solid rgb(0, 0, 0);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}

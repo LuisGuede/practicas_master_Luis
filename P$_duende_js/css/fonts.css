@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Ramadan';
+    src: url('../fonts/WelcomeRamadhanPersonaluse.eot');
+    src: url('../fonts/WelcomeRamadhanPersonaluse.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/WelcomeRamadhanPersonaluse.woff2') format('woff2'),
+        url('../fonts/WelcomeRamadhanPersonaluse.woff') format('woff'),
+        url('../fonts/WelcomeRamadhanPersonaluse.ttf') format('truetype'),
+        url('../fonts/WelcomeRamadhanPersonaluse.svg#WelcomeRamadhanPersonaluse') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

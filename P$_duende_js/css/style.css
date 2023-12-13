@@ -1,0 +1,45 @@
+
+:root {
+    --primary: #F9DA88;
+    --secondary: #A6AF7D;;
+    --greydark: #060F0D;
+    --greydark2: #161F1D;
+    --textmain: #FFEAA8;
+    --textsecondary: #F58D83;
+}
+
+* { padding:0; margin:0; box-sizing:border-box;}
+body { min-height: 100vh; background-color: #000; font-family: 'Ramadan';}
+img { width: 100%; }
+.container { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 60px; }
+.subcontainer{ max-width: 590px; width: 100%; height: 100%; filter: drop-shadow(0 0 2px var(--textmain)) drop-shadow(0 0 99px var(--greydark2)); animation: glowbox 10s linear infinite; }
+
+
+/* title */
+.title { grid-column: span 2; width: 100%; background: var(--greydark); padding: 30px 30px 15px 30px; border-top-left-radius: 40%; border-top-right-radius: 40%; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;color: var(--textmain); clip-path: polygon(0 20%, 20% 0, 80% 0, 100% 20%, 100% 100%, 0 100%);text-align: center; font-size: 44px; }
+.title__in { position: relative;  }
+.title__txt {color: var(--textmain); text-shadow: 4px 4px 20px #FFFA; animation: glowtext 2s linear infinite; }
+
+/* foto & tambor */
+.foto-tambor { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); justify-content: center; align-items: center; gap: 10px; height: 50%; flex-basis: 100%; margin: 10px 0;}
+.tambor , .foto-alumno {  height: 280px; background: var(--greydark); padding: 30px; border-radius: 4px;}
+.tambor__in, .foto-alumno__in { height: 100%; border: 2px solid var(--primary); background: #000; border-radius: 4px;}
+.tambor__in {font-family: 'Signika Negative', sans-serif; display: flex; justify-content: center; align-items: center; color: #FFF; font-size: 24px; text-transform: capitalize; }
+.foto-alumno__in img { height: 100%; object-fit: cover;}
+
+/* controls */
+.controls {width: 100%; background: var(--greydark); padding: 15px; border-radius: 4px; display: flex; justify-content: center; gap: 10px;}
+.btn { font-family: 'Signika Negative', sans-serif; border: 1px solid var(--secondary); color: var(--secondary); padding: 10px 24px; background:  #090606; border-radius: 4px; width: 180px; cursor: pointer;}
+.btn.active { border-color: #FFF; color:#FFF;  }
+
+@keyframes glowbox {
+    0% {filter: drop-shadow(0 0 2px var(--textmain)) drop-shadow(0 0 99px var(--greydark2));}
+    50% {filter: drop-shadow(0 0 1px var(--textmain)) drop-shadow(0 0 33px var(--greydark2));}
+    100% {filter: drop-shadow(0 0 2px var(--textmain)) drop-shadow(0 0 99px var(--greydark2)); }
+}
+
+@keyframes glowtext {
+    0% {text-shadow: 0px 0px 10px #FFFC;}
+    50% {text-shadow: 0px 0px 20px #FFF9;}
+    100% {text-shadow: 0px 0px 10px #FFFC; }
+}

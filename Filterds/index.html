@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/fun.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- menu responsive -->
+        <nav class="menu-responsive">
+            <div class="btn-close pointer">
+                <img src="icons/close.svg" alt="close">
+            </div>
+            <ul>
+                <li class="menu-responsive__item pointer">home</li>
+                <li class="menu-responsive__item pointer">about us</li>
+                <li class="menu-responsive__item pointer">projects</li>
+                <li class="menu-responsive__item pointer">contact</li>
+            </ul>
+        </nav>
+        <!-- /menu-responsive -->
+
+        <!-- HEADER -->
+        <header>
+            <div class="header-logo pointer">
+                <img class="header-logo__img" src="icons/logo.svg" alt="logo">
+            </div>
+            <nav class="header-menu">
+                <ul>
+                    <li class="header-menu__item pointer">home</li>
+                    <li class="header-menu__item pointer">about us</li>
+                    <li class="header-menu__item pointer">projects</li>
+                    <li class="header-menu__item pointer">contact</li>
+                </ul>
+            </nav>
+            <div class="btn-menu-responsive">
+                <button class="btn-menu-responsive__btn pointer">
+                    <img class="btn-menu-responsive__img" src="icons/burger.svg" alt="">
+                </button>
+            </div>
+        </header>
+        <!-- /HEADER -->
+
+        <!-- FILTERED CONTENT SECTION-->
+        <section style="padding-top: 120px">
+            <h2 style="font-size: 44px; text-align: center;">FILTERED CONTENT</h2>
+            <div class="filtered-content">
+                <button class="filtered-content__filter pointer active" data-id="all">all</button>
+                <button class="filtered-content__filter pointer" data-id="comedia">comedia</button>
+                <button class="filtered-content__filter pointer" data-id="drama">drama</button>
+                <button class="filtered-content__filter pointer" data-id="ciencia-ficcion">ciencia ficcion</button>
+                <button class="filtered-content__filter pointer" data-id="terror">terror</button>
+            </div>
+            <div class="grid-peliculas__container">
+                <div class="grid-peliculas">
+                    <div class="grid-peliculas__item terror all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_off.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_off.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_off.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_off.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_off.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>La culpa es de los demás, yo soy el/la mejor</h2>
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item drama all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>Me quejo por deporte y soy plusmarquista</h2> 
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item comedia all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>Ya lo hago mañana si eso</h2> 
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item comedia all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>Cariño, llego en 20 minutos y si no llego vuelve a mirar el mensaje</h2> 
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item terror all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>Tengo mucho trabajo, no soy yo que no me pongo en mi sitio, es el trabajo.</h2>
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item ciencia-ficcion all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>La vida es de color de rosa, rosa fucsia</h2>
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item comedia all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>Llevo 2 semanas hablando sola, estoy al borde de la esquizofrenia</h2>    
+                        </div>
+                    </div>
+                    <div class="grid-peliculas__item drama all active">
+                        <div class="grid-peliculas__mask">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                            <img class="grid-peliculas__star" src="icons/star_on.svg" alt="">
+                        </div>
+                        <div class="grid-peliculas__item-in">
+                            <h2>La culpa es de Mike, siempre</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /FILTERED CONTENT SECTION-->
+
+        <!-- FOTO FULL WIDTH -->
+        <section>
+            <div class="full-img">
+                <div class="full-img__rotulo">
+                    <h3>TITULO IMG</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit sit vel inventore laborum suscipit veniam enim harum, et voluptatum laudantium illum odit iusto ullam, nesciunt, unde dolores aliquam? Itaque, illo!</p>
+                </div>
+            </div>
+        </section>
+        <!-- FOTO FULL WIDTH -->
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-in">
+                <div class="footer-col">
+                    <ul>
+                        <li><a class="highlighted" href="">item</a></li>
+                        <li><a class="highlighted" href="">item</a></li>
+                        <li><a class="highlighted" href="">item</a></li>
+                        <li><a class="highlighted" href="">item</a></li>
+                        <li><a class="highlighted" href="">item</a></li>
+                        <li><a class="highlighted" href="">item</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-col">
+                    <h3>titular</h3>
+                    <ul>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>titular</h3>
+                    <ul>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>titular</h3>
+                    <ul>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                        <li><a href="">item</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col rrss">
+                    <a href=""><img src="icons/facebook.svg" alt=""></a>
+                    <a href=""><img src="icons/facebook.svg" alt=""></a>
+                    <a href=""><img src="icons/facebook.svg" alt=""></a>
+                    <a href=""><img src="icons/facebook.svg" alt=""></a>
+                </div>
+            </div>
+
+        </footer>
+        <!-- /FOOTER -->
+
+    </div>  
+</body>
+</html>

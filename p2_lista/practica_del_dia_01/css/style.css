@@ -1,0 +1,18 @@
+li{
+    list-style: none;
+}
+
+.item1{
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
+
+.item2{
+    font-size: 30px;
+    border-bottom: 3px solid black;
+}
+
+.item3{
+    font-size: 50px;
+    border-bottom: 3px solid black;
+}
