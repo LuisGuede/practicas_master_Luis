@@ -1,0 +1,22 @@
+
+.blue_small_box{
+    background-color: rgb(23, 23, 189);
+    width: 30vw;
+    height: 30vw;
+    font-size: 15vw;
+    color: white;
+    padding: 10px;
+
+    
+}
+
+.box{
+    font-size: 20vw;
+    background-color: blue;
+    width: 90vw;
+    height: 40vw;
+    padding: 20px;
+}
+
+
+

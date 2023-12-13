@@ -1,0 +1,112 @@
+
+*{
+
+    padding: 0%;   
+    margin: 0%;
+    border: none;  
+    box-sizing: border-box;
+
+}
+
+
+header{
+
+    background-color: rgb(36, 41, 116);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 50px;
+ 
+}
+
+.title{
+
+    padding-bottom: 50px;
+    font-weight: normal;
+
+}
+
+li{
+
+    list-style: none;
+    display: inline;
+    padding: 50px;
+
+}
+
+li:hover{
+    color: orangered;
+}
+
+.fondo_01{
+
+    background-color: bisque;
+    display: flex;
+ 
+}
+
+.primer_Cuadro{
+  
+    width: 500px;
+    padding-top: 40px;
+    padding: 60px;
+    
+}
+
+.Segundo_Cuadro{
+
+   
+    padding-left: 40px;
+    padding-top: 40px;
+    width: 1000px;
+   
+   }
+
+h2{
+
+    font-size: 80px;
+    color: #ff6347;
+    padding-bottom: 20px;
+}
+
+
+.p_negrita{
+
+    font-weight: bold;
+    padding-bottom: 20px;
+
+}
+
+p{
+
+    font-size: 20px;
+}
+
+
+img{
+
+width: 100%;
+
+}
+
+.columnas{
+    padding-top: 20PX;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+figcaption{
+
+    font-size: 40px;
+    padding-bottom: 20px;
+
+}
+
+.body_text_img{
+
+    font-size: 17px;
+    padding-bottom: 20px;
+
+}

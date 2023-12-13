@@ -1,0 +1,101 @@
+*{
+    padding: 0; margin: 0; box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(50, 18, 71);
+}
+
+.tv{
+    padding: 20px;
+    border: 6px solid yellow;
+    background-color: black;
+    border-radius: 40px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.tv_screen{
+    border: 6px solid yellow;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 100%;
+    height: 600px;
+}
+
+.tv_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tv_buttons_item{
+    padding: 5px 10px;
+}
+
+
+.tv_buttons_8{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 5px;
+    max-width: 200px;
+    width: 100%;
+
+}
+
+.tv_buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.tv_buttons_on_off{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    
+}
+
+
+
+.tv_btn_on{
+
+    width: 60px;
+    height: 30px;
+
+}
+
+.tv_btn_sint{
+
+    width: 60px;
+    height: 10px;
+
+}
+
+.tv__legs{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: yellow;
+    bottom: -34px;
+    
+}
+
+.tv_legs--1{
+   
+    left: 10%;
+    
+}
+
+.tv_legs--2{
+ 
+    right: 10%;
+    
+}
+
+.turn_off{
+    opacity: 0%;
+}

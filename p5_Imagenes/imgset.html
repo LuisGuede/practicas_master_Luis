@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Practica/css/style.css">
+
+</head>
+
+<body>
+    <img 
+    src="img/imgset/voldemort-small.jpg" 
+    alt="Imagen de voldemor" 
+    srcset="img/imgset/voldemort-small.jpg 300w,
+    img/imgset/voldemort-medium.jpg 700w,
+    img/imgset/voldemort-large.jpg 900w"
+    >
+
+    <picture>
+        <source srcset="img/imgset/voldemort-large.jpg" media="(min-width:2000px)">
+        <source srcset="img/imgset/voldemort-medium.jpg" media="(min-width:800px)">
+        <img src="img/imgset/voldemort-small.jpg" alt="foto de voldemor" title="foto de voldemor">
+    </picture>
+
+    <picture>
+        <source srcset="img/imgset/voldemort-large.jpg" type="img/avif">
+        <source srcset="img/imgset/voldemort-medium.jpg" media="img/webp">
+        <img src="img/imgset/voldemort-small.jpg" alt="foto de voldemor" title="foto de voldemor">
+    </picture>
+    
+</body>
+
+<!--DPR:  -->
+
+</html>

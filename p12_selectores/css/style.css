@@ -1,0 +1,68 @@
+/* los selectores son case sencitive, no puede empesar con numeros o mayusculas. Si admite giones, no se permiten acentos. No se permiten caracteres extraños, no Ñ */
+
+.parrafo-alternativo{
+
+    color: #6d3f97;
+}
+
+#spanElement{
+    background-color: blue;
+    opacity: 50%
+}
+
+[title="elemento Discolo Rojo"]{
+
+    color: red;
+    opacity: 50%;
+}
+
+.section-1{
+
+    color: pink;
+}
+
+.parrafo-alternativo, con-background{
+
+    background: pink;
+}
+
+.section-2 p:first-child{
+    color: yellow;
+}
+
+.section-3{
+    font-size: 24px;
+}
+
+.section-3 p:first-child {
+    color: red; 
+}
+
+
+.section-3 p:nth-child(2){
+    color: green;
+}
+
+.section-3 p:last-child{
+    color: blue;
+}
+
+.section-2 > p{
+    font-size: 21px;
+}
+
+p:hover{
+    font-size: 30px;
+}
+
+
+/* un seudoelemento es parte de un contenido */
+
+
+.section-3::before{
+    content: "hola soy un before";
+}
+
+.section-3::after{
+    content: "hola soy un after";
+}

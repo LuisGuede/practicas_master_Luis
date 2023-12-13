@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+<style>
+
+/* selector universal = * */
+
+/* selector por etiqueta = from, dive, lable */
+
+/* selector por clase = class*/
+
+.my-class{
+    /* color: blue; */
+}
+
+/* selector por ID */
+
+#nombre{
+    /* border: 2px solid forestgreen; */
+}
+
+
+/* selector por atributo [se usan los [] ] */
+
+[type]{
+    /* border-width: 8px; */
+}
+
+[type="number"]{
+    /* border-width: 8px; */
+}
+
+[type*="num"]{
+    /* border-width: 8px; */
+}
+   
+/* selector compuesto: lo uso cundo quiero sobreescribir algo.Es como un stylo de caracter*/
+
+input#nombre{
+color: blueviolet;
+}
+
+label.my-lable{}
+
+
+/* selector anidado */
+
+section label {
+
+    border: 2px solid violets;
+}
+
+/* selector multiple */
+
+label, input{
+
+    display: block;
+
+}
+
+
+
+</style>
+
+
+
+<form action="">
+
+    <div>
+        <label for="nombre" class="my-lable nombre">Nombre</label>
+        <input type="text" id="Nombre">
+    </div>
+
+<div>
+    <label for="ganas de vacaciones">Ganas de Vacaiones</label>
+    <input type="range" name="vacaciones" id="vacaciones">
+</div>
+
+<section>
+    <label>edad</label>
+    <input type="number">
+</section>
+
+</form>
+
+
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+svg{
+    width: 100%;
+}
+
+.contenedor{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.woman{
+    width: 600px;
+    position: relative;
+}
+
+.orbe_violeta{
+
+    width: 20px;
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.orbe_indigo{
+    width: 20px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+   
+}
+
+.orbe_blue{
+    width: 20px;
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.orbe_green{
+    width: 20px;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.orbe_yellow{
+    width: 20px;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%);
+   
+}
+
+.orbe_orange{
+    width: 20px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%);
+   
+}
+
+.orbe_red{
+    width: 20px;
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%);
+    
+}
+
+@keyframes rotateWoman {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+.aura{
+    transform-origin: center;
+    animation: 4s linear rotateWoman infinite;
+}

@@ -1,0 +1,72 @@
+@font-face {
+    font-family:"GresickMetal-51LXV";
+    src: url("../fonts/GresickMetal-51LXV.eot");
+    src: url("../fonts/GresickMetal-51LXV.woff") format('woff'),
+        url("../fonts/GresickMetal-51LXV.woff2") format('woff2'),
+        url("../fonts/") format('embedded-opentype'),
+        url("../fonts/GresickMetal-51LXV.ttf") format('truetype'),
+        url("../fonts/GresickMetal-51LXV.otf") format('otf'),
+        url("../fonts/GresickMetal-51LXV.svg") format('svg');
+  }
+  
+body{
+   
+    /* Font family */
+    font-family: "GresickMetal-51LXV";
+
+    /* font-size - px, em, rem, %, keyword */
+    font-size:  1.2em;
+
+    /* font-weight - 100-900, keyword */
+    font-weight: 400;
+
+    /* line-height - numero (relative to font-size), px, %, em, rem, keyword */
+    line-height: 1.5;
+
+    /* letter-spacing - px, em, rem, keyword */
+    letter-spacing: 4px;
+
+    /* text-transform  keyword - uppercase, lowercase, capitalize, none*/
+    text-transform: uppercase;
+
+    /* text-align - left right center justify */
+    text-align: center;
+
+    /* text-decoration - underline, overline, line through */
+    text-decoration: none;
+
+    /* color */
+    color: hex, hexa, rgb, hsla,
+
+  
+}
+
+div{
+
+    background-color: aqua;
+    width: 300px;
+    height: 200px;
+
+    /* overflow - corta todo por ejemplo una imagen o texto largos 
+    overflow: visible (desvordate)
+    overflow: hidden (se corta todo)
+    overflow: scrool (ponme escroll si o si
+    overflow-y
+    overflow-x
+    */
+    overflow: hidden;
+
+    /* word-breake - break-all - break-normal - keep-all*/
+    word-break: break-all;
+
+
+    /* white-space: el texto se desborda*/
+    white-space: nowrap;
+    /* white-space: pre; respeta el texto del html ((tal cual) por ejmplo 8 espacios */
+    
+    /* text-overflow */
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+  
+}

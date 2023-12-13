@@ -1,0 +1,37 @@
+*{
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #565694;
+}
+
+h1{
+    font-size: 100px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: aliceblue;
+}
+
+figure{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    padding: 40px;
+    margin-top: 50px;
+    color: aliceblue;
+    text-align: left;
+    text-transform: uppercase;
+    
+}
+
+img, svg{
+    width: 100%;
+    border: 1px black;
+
+}
+
+.bt-flechas{
+    width: 120px;
+    margin: 50px auto 0 auto;
+
+}

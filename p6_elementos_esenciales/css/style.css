@@ -1,0 +1,54 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+h1{ 
+    border: 2px 
+    solid #000000; 
+    background: #EEE; 
+    padding: 5px; 
+}
+
+h2{
+
+    background: #00FFFF; 
+    padding: 30px;
+    margin-top: 60px;
+
+}
+
+figure{
+
+    width:100%;
+
+}
+
+table, tr, td{
+
+    border: 1px solid red;
+
+}
+
+
+img, select, video, audio, lable, input{
+    display: block;
+    background-color: #00FFFF;
+    border: 2px sandybrown;
+    margin: auto;
+    width: 50%;
+}
+
+
+
+
+/* .img, .select, .video, .audio, .lable, .input{
+    background-color: #00FFFF;
+    border: 2px sandybrown;
+    margin: auto;
+    width: 50%;
+} */
+
+
+

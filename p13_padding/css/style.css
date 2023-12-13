@@ -1,0 +1,15 @@
+/* ...................................................... */
+
+.mydiv{
+    background-color: aqua;
+    border: 5px solid black;
+    /* margin:  30px 4%; */
+    /* margin: 100px 4% 30px; */
+    /* margin: 100px 3vw 100px 2px; */
+
+    padding: 20px;
+    padding: 20px 30px;
+    padding: 20px 30px 40px;
+    padding: 20px 30px 40px 50px;
+
+}
