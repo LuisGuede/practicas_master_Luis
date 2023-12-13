@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Sincronia:
+        hacer cosas en paralelo. 
+        Sunchoronous y Asynchronous
+    -->
+
+    <script>
+        // console.log('inicio del programa js');
+        // let arrayIndex = [];
+
+        // for(let index = 0; index < 100; index++){
+
+        //     if(index == 99) console.log('fin el loop');
+    
+        // }
+
+        // console.log('despues del loop');
+
+        // --------------------------------------------------------
+
+        // HTTP REQUEST
+
+        // 1. Creamos instancia de HTTP request
+        // const XHR = new XMLHttpRequest;
+
+        // 2. Configuramos y abrimos una conexion
+        // XHR.open('GET','https://jsonplaceholder.typicode.com/posts');
+
+        // 3. Envio la peticion
+        // XHR.send()
+
+        // 4. proseso la respuesta
+        // XHR.addEventListener('load', function(){
+        //     if(XHR.status == 200){
+        //         const myJson = JSON.parse(XHR.response)
+        //         console.log(myJson);
+        //     }
+        // })
+
+        // --------------------------------------------------------
+
+        // FETCH
+
+        // esto se llama promesa:
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            // espero a que el recurso este disponible y entonces.....
+            .then((response)=>{
+                //parceo el json string que llega
+                response.json()
+                    // cunado esta listo el json
+                    .then((data)=>{
+                    console.log(data); // log
+                })
+            })
+       
+        //     method: 'GET',
+        //     headers: {
+        //         "Content-Type" : "application/json" // metadatos de  mi peticion
+        //     },
+        //     mode: "cors / same-origin / no-cors",
+        //     body: myObj,
+        //     cache: "no-cache / force-cache / reload",
+        // });
+
+    </script>
+</body>
+</html>

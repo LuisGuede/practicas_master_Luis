@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumeroPrimos</title>
+</head>
+<body>
+
+    <!-- Crea un boton que pinte de uno en uno los 10 primeros numeros primos cada vez que se haga click. No puede pintar nada que no sea un numero primo -->
+
+    <div class="slot">
+        <div class="numero__container"></div>
+        <div class="button__container">
+            <button class="button__primo">Generar Numero Primo</button>
+        </div>
+    </div>
+
+    <style>
+
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .slot{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .numero__container{
+            margin: 0.4%;
+            width: 300px;
+            height: 300px;
+            border-radius: 4%;
+            border: 4px solid #B7410E;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+        }
+
+        .button__primo{
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+
+    const btn = document.querySelector('.button__primo');
+    const numero__container = document.querySelector('.numero__container');
+
+    // Declaracion
+        function* generarPrimos(){
+            yield 2;
+            yield 3;
+            yield 5;
+            yield 7;
+            yield 11;
+            yield 13;
+            yield 17;
+            yield 19;
+            yield 23;
+            yield 29;
+      }
+
+    //  2. Guardarlo en una vsariable
+        let generatorItem = generarPrimos();
+
+        // btn.addEventListener('click', function(){
+        //     numero__container.textContent = generatorItem.next().value;
+        // })
+
+        btn.addEventListener('click', function(){
+            // guardo datos
+            const nextItem = generatorItem.next();
+            const nextValue = nextItem.value;
+            const isDone = nextItem.done;
+
+            // Pinto dato si no es undefined
+            numero__container.innerHTML = nextValue ?  nextValue: "";
+
+            isDone && (generatorItem = generarPrimos());
+            
+        })
+
+    </script>
+
+</body>
+</html>

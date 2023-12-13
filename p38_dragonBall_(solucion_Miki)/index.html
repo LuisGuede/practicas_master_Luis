@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonBall</title>
+</head>
+<body>
+
+    <div class="game">
+        <div class="game__container">
+            <div class="game__fighter game__fighter-left">
+                <div class="game__fighter-in game__fighter-left-in">  
+                </div>
+            </div>
+            <div class="button">
+                <button class="btn-fight">Fight</button>
+            </div>
+            <div class="game__fighter game__fighter-right">
+                <div class="game__fighter-in game__fighter-right-in">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        * {padding: 0; margin:0; box-sizing: border-box;}
+        .game {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(1,0,15);
+            background: linear-gradient(16deg, rgba(1,0,15,1) 0%, rgba(9,9,121,1) 35%, rgba(8,30,255,1) 100%);
+        }
+
+        .game__container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            height: 400px;
+            width: 100%;
+            gap: 20px;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .game__fighter {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 8px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a2a2a;
+        }
+
+        .game__fighter-in {
+            height: 400px;
+            width:100%;
+            display: contents;
+        }
+
+        .game__fighter-in img{
+            height:100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button button {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px 20px;
+            font-size: 24px;
+            border: 4px solid #000;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .winner{
+            border: 10px solid green;
+            animation: winnerAnimation 0.2s ease-in;
+
+        }
+
+        @keyframes winnerAnimation{
+            0% { transform: rotate(0)}
+            25% { transform: rotate(5deg)}
+            50% { transform: rotate(0)}
+            75% { transform: rotate(-5deg)}
+            100% { transform: rotate(0)}
+        }
+
+        .winner::after{
+            content: "WINNER!!";
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: green;
+            position: absolute;
+            font-size: 3rem;
+        }
+
+        .draw{
+            border: 10px solid rgb(255, 0, 0);
+            animation: winnerAnimation 0.2s ease-in;
+
+        }
+
+        .draw::after{
+            content: "DRAW!!";
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(255, 0, 0);
+            position: absolute;
+            font-size: 3rem;
+        }
+        </style>
+
+    <script>
+
+        const personajes = {
+            p0: {
+                name: 'goku',
+                force: 1
+            },
+            p1: {
+                name: 'vejeta',
+                force: 2
+            }, 
+            p2: {
+                name: 'picollo',
+                force: 3
+            } ,
+        };
+
+        // Capturamos elementos necesarios
+        const btnFight = document.querySelector('.btn-fight');
+        const photoContainerLeft = document.querySelector('.game__fighter-left-in');
+        const photoContainerRight = document.querySelector('.game__fighter-right-in');
+
+        btnFight.addEventListener('click', fight);
+
+        function fight(){
+            // genero numero aleatorio de 0 a 2
+            const keyLeft = Math.floor(Math.random()*3);
+            const keyRight = Math.floor(Math.random()*3);
+
+            // creo url
+            const urlPhotoLeft = 'img/'+ personajes['p'+keyLeft].name + '.webp';
+            const urlPhotoRight = 'img/'+ personajes['p'+keyRight].name + '.webp';
+
+            // LEFT-------------------------------------------------------------
+
+            // creo una imagen
+            const PhotoLeft = document.createElement('img');
+            // aigno url a la imagen
+            PhotoLeft.src = urlPhotoLeft;
+            // vaciado de div
+            photoContainerLeft.innerHTML = "";
+            // añado imagen al dom
+            photoContainerLeft.appendChild(PhotoLeft);
+
+            // FORCE LEFT-------------------------------------------------------
+
+            const forceLeft = personajes['p'+keyLeft].force;
+
+
+            // RIGHT-------------------------------------------------------------
+
+            // creo una imagen
+              const PhotoRight = document.createElement('img');
+            // aigno url a la imagen
+            PhotoRight.src = urlPhotoRight;
+            // vaciado de div
+            photoContainerRight.innerHTML = "";
+            // añado imagen al dom
+            photoContainerRight.appendChild(PhotoRight);
+
+            // FORCE LEFT-------------------------------------------------------
+
+            const forceRight = personajes['p'+keyRight].force;
+
+            showWinner(forceLeft, forceRight);
+        }
+
+        // funcion que muestra al ganador of the game
+        function showWinner(forceLeft, forceRight){
+            photoContainerLeft.parentNode.classList.remove('winner', 'draw');
+            photoContainerRight.parentNode.classList.remove('winner', 'draw');
+
+        
+            if(forceLeft > forceRight) {
+                // ganadorL
+                setTimeout(() => {
+                    photoContainerLeft.parentNode.classList.add('winner');
+                }, 0);
+                
+            }
+
+            else if (forceRight > forceLeft) {
+                // ganadorR
+
+                setTimeout(() => {
+                photoContainerRight.parentNode.classList.add('winner');
+                }, 0);
+            }
+
+            else{
+                // empate
+                setTimeout(() => {
+                photoContainerLeft.parentNode.classList.add('draw');
+                photoContainerRight.parentNode.classList.add('draw');
+                }, 0);
+            }
+        }
+    </script>
+</body>
+</html>

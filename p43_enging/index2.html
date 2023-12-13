@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // DOM: DOCUMENT OBJECT MODEL
+        // BOM: BROWSER OBJECT MODEL
+
+
+        //  window.open es simplemente abre una ventana / window.open(url, name, specs)
+
+        window.open("url", "_self") // el _self es para que abra en la misma pagina.
+
+        console.log(window);
+        setTimeout(() => {
+            window.open("http://mickx.com", "_blank", "width=200, height=400");
+        }, 2000);
+
+        // ----------------
+
+        // window.location
+
+            // window.location.href
+            console.log(window.location.href);
+
+            // window.location.hostname (esto busca el host(el dominio))
+            console.log(window.location.hostname);
+
+            // window.location.pathname
+            console.log(window.location.pathname);
+
+            // window.location.protocol
+
+            // window.location.assing (cambia la url)
+            window.location.assing('')
+
+            // ----------------
+
+            // Memoria local:
+    
+            // es una forma de guardar daton en el ordenador
+        
+        
+        
+
+
+    </script>
+</body>
+</html>

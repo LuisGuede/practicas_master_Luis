@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <button>Lanzar Moneda</button> -->
+
+    <!-- <div class="result"></div> -->
+
+    <div class="buttons">
+        <button value="copy" class="buttons_button buttons_button--copy">COPY</button>
+        <button value="delete" class="buttons_button buttons_button--delete">DELETE</button>
+        <button value="insert" class="buttons_button buttons_button--insert">INSERT</button>
+    </div>
+    
+    <p class="dom-item">Holi soy un elemento DOM solitaio</p>
+
+    
+    <script>
+
+        // 1. Crea una función que pinte una circunferencia en el centro de la pantalla del diámetro especificado por parámetro de la misma (en px).
+
+        // function drawCircle(diameter) {
+
+        //     return document.body.innerHTML += `<div style="height:${diameter}px; width: ${diameter}px; background:red; border-radius: 50%"></div>`;
+        // }
+
+        // drawCircle(10);
+        // drawCircle(30);
+        // drawCircle(50);
+        // drawCircle(70);
+        // drawCircle(90);
+
+        // 2. Crea una función que cuando el usuario haga click en un botón simule el lanzamiento de una moneda al aire y devuelva cara o cruz en un div al lado del botón. Cuando el usuario haya hecho 3 lanzamientos, que la función se inactive y en el div se muetre " No tientes a tu suerte, amigo".
+
+        // const button = document.querySelector('button');
+        // const result = document.querySelector('.result');
+
+        // button.addEventListener('click', lanzarMoneda);
+
+        // var contador = 0;
+
+        // function lanzarMoneda() {
+
+        //     contador = contador +1;
+          
+        //     if(contador > 3) { return result.innerHTML = "no tientes a tu suerte"}
+            
+
+        //     return result.innerHTML = (Math.floor(Math.random()*2)%2) == "0" ? "cara" : "cruz"
+
+
+        // }
+
+
+    //   4. Crea una función que dado un elemento dom permita: 
+             // - borrarlo
+            // - copiarlo debajo
+            // - insertar un texto dentro del elemento
+            // - dependiendo de los parámetros que se le pasen función. 
+            //  - Ejemplo: domManipulator(obj, borrar) -> borra
+            //  - Ejemplo: domManipulator(obj, copiar) -> copia
+             // - Crea botones HTML que lancen la función
+
+        
+    // capturamos el contenido de los botones
+    const buttons = document.querySelector('.buttons');
+    
+
+    // creo event listener sobre el contenedor de botones
+    buttons.addEventListener('click', function(e){
+
+        const domItem = document.querySelector('.dom-item');
+
+        clickOnelements(domItem, e.target.value);
+ 
+    });
+
+    function clickOnelements(domElement, action){
+
+        if (action== "delete"){
+            domElement.remove();
+        }
+
+        else if(action === "copy"){
+            document.body.appendChild(domElement.cloneNode(true));
+        }
+
+        else if(action === "insert"){
+            domElement.innerHTML = "texto generado por JS";
+        }
+
+        else{
+            console.log("no exite esa accion");
+        }
+
+    }
+
+    // 5. Crea un objeto que tenga un método que permita concatenar los valores de todas sus propiedades (sin harcodear). 
+
+    // this is a example of harcode. It is becuse the use of THIS.-----
+
+    // const myObject = {
+    //     prop1: "super",
+    //     prop2: "cali",
+    //     prop3: "fragil",
+    //     prop4: "listicoespoalidoso",
+    //     concatenar: function(){
+    //         return this.prop1 + this.prop2 + this.prop3 + this.prop4
+    //     }
+    // }
+
+    // this is not a example of harcode. ---
+
+    const myObject = {
+        prop1: "super",
+        prop2: "cali",
+        prop3: "fragil",
+        prop4: "listicoespoalidoso",
+        concatenar: function(cla){
+            let all="";
+
+            Object.values(this).forEach((item)=>{
+                if(typeof item === "string") all +=item;
+            })
+
+            return all;
+        }
+    }
+
+    console.log(myObject.concatenar())
+
+    </script>
+
+</body>
+</html>

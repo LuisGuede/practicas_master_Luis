@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generadores</title>
+</head>
+<body>
+    
+    <script>
+        
+        //1. Definicion - funcion generadores
+        // function* myGen(){
+        //     yield "primer valor de retorno";
+        //     yield "segundo valor de retorno";
+        //     yield "tercer valor de retorno";
+        // }
+
+        //2. Guardo la ejecucion de la funcion en variable
+        // const generator = myGen();
+
+        //3. Ejecuto los YIELDS llamado a next();
+        // generator.next();
+        // generator.next();
+
+        // Declaracion
+        function* exponential(){
+            
+            yield 3 * 3;
+            yield 3 * 3 * 3;
+            yield 3 * 3 * 3 * 3;
+            yield 3 * 3 * 3 * 3 * 3;
+      }
+
+    //  2. Guardarlo en una vsariable
+    const myGenerator = exponential();
+
+    // 3. Llamo next tantas veces como quiera;
+    console.log(myGenerator.next());
+    console.log(myGenerator.next());
+    console.log(myGenerator.next());
+    console.log(myGenerator.next());
+
+    // 3. Llamo next tantas veces como quiera - otros ejemplos 
+    console.log(myGenerator.return());
+    console.log(myGenerator.throw(new Error("Error custom creado por jesus")));
+
+
+    // Errores, esto son errores customs que puedo hacer.
+    throw new Error('la has liado pajaro')
+
+    
+    
+
+    </script>
+
+</body>
+</html>

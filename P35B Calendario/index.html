@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+</head>
+
+<body>
+
+    <script>
+
+        const mesesDelAno = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        const diasSemanas = {
+            Lunes: "L", Martes: "M", Miercoles: "X", Jueves: "J", Viernes: "V", Sabado: "S", domingo: "D"
+        }
+
+        // Creo un contenedor
+        document.body.innerHTML = '<div class="container"></div>';
+
+        // Capturo el contenedor
+        const container = document.querySelector('.container');
+
+        // Aplico estilos grid al contenedor
+        container.style.display = "grid";
+        container.style.gridTemplateColumns = "repeat(4, 1fr)";
+        container.style.border = "1px solid #000";
+
+        // Recorro el array y en cada mes aplico una funcion
+        mesesDelAno.forEach((mesesDelAno)=>{
+           
+            container.innerHTML += `<div class="mesesDelAno-${mesesDelAno}" style="padding:10px; border:1px solid #000;"><h3>${mesesDelAno}</h3></div>`;
+
+            // capturamos mesesDelAno
+            const mesActual = document.querySelector('.mesesDelAno-'+ mesesDelAno);
+            // espacio en el titulo
+            const tituloMes = document.querySelector('.mesesDelAno-'+ mesesDelAno + ' h3');
+            tituloMes.style.gridColumn = "span 7";
+
+            // Estilos a mes
+            mesActual.style.display = "grid";
+            mesActual.style.gridTemplateColumns = "repeat(7, 1fr)";
+
+
+            // // Comvierto objeto en array
+            // Object.keys(diasSemanas); // me da la los key
+            // Object.values(diasSemanas); // me da la los values
+            // Object.entries(diasSemanas); // me da keays y values
+
+            // Creo contenedor para header de dias
+            mesActual.innerHTML += `<div class="dias-title-${mesesDelAno}">`;
+
+
+            // Capturo header de dias
+            const diasSemanasHeading = document.querySelector('.dias-title-'+ mesesDelAno);
+
+            // ajusto maquetacion para que no se distorcione el grid
+            diasSemanasHeading.style.gridColumn = "span 7";
+            diasSemanasHeading.style.display = "grid";
+            diasSemanasHeading.style.gridTemplateColumns = "repeat(7, 1fr)";
+
+
+            // pinto con un loop los dias de la seman dentro del contenedor de dias
+            Object.values(diasSemanas).forEach((dias)=>{
+                diasSemanasHeading.innerHTML += `<p style="font-weight:800">${dias}</p>`;
+
+            })
+
+            // Inyectamos dias de la semana
+
+
+            let dias = 31;
+            if(mesesDelAno == "Febrero") dias = 29;
+            if(mesesDelAno == "Abril" || mesesDelAno == "Junio" || mesesDelAno == "Septiembre" || mesesDelAno == "Noviembre") dias = 30;
+
+            // Creo bucle de 31 iteraciones, uno para cada dia
+            for(let i = 1; i<=dias; i++){
+                mesActual.innerHTML += `<span>${i}</span>`
+            }
+
+
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Backend</title>
+</head>
+
+<body>
+
+    <style>
+
+        *{
+            padding: 0; margin: 0; box-sizing: border-box;
+        }
+    
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img{
+            width: 100%;
+            display: block;
+        }
+
+        .input__row{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            
+            position: relative;
+        }
+
+        label, button{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        input{
+            padding: 5px;
+        }
+
+        button{
+            padding: 5px;
+        }
+
+        .eye{
+            width: 20px;
+            position: absolute;
+            top: 53px;
+            left: 156px;
+            cursor: pointer;
+        }
+    
+    </style>
+
+<!-- 1.Crear un formulario: -nombre de usuario, -password, -boton enviar formulario -->
+
+    <form action="">
+        <div class="input__row">
+            <label for="user">User Name</label>
+            <input class="input__user"  type="text">
+        </div>
+
+        <div class="input__row">
+            <label for="">Password</label>
+            <input class="input__pwd" type="password">
+            <div class="eye">
+                <img src="img/eye_open.svg" alt="">
+            </div>
+        </div>
+
+        <button class="btn">ENVIAR</button>
+    </form>
+ 
+    <script>
+
+    // See Password captura
+        const ojillo = document.querySelector('.eye img');
+        const inputPwd = document.querySelector('.input__pwd');
+
+        // See Password ejecucion
+        ojillo.addEventListener('click', function(){
+            if(inputPwd.type === "password"){
+                inputPwd,type = "text";
+                ojillo.src = "img/eye_closed.svg";
+            } else{
+                inputPwd.type = "password";
+                ojillo.src = "img/eye_open.svg";
+            }
+        })
+
+        // 2. Crear funcion que sera lanzada al hacer click en el boton enviar
+
+        const btn = document.querySelector('.btn');
+        const userInput = document.querySelector('.user');
+        const pwdInput = document.querySelector('.pwd');
+        const usersObj = {}
+        
+        btn.addEventListener('click', function(){
+
+        // obtengo objeto de localstorage
+        const paresedLocalStorage = localStorage.length ? JSON.parse(localStorage.users) : "";
+
+        // calculo numero de items del objeto (para  key - value)
+        const storedUsersLength = Object.keys(paresedLocalStorage).length;
+
+        // añado key y value al objeto que voy a guardar
+        usersObj[userInput.value + "-" + Number(storedUsersLength+1)] = pwdInput.value;
+
+        localStorage.setItem('users', JSON.stringify(usersObj))
+
+    })
+        // 3. La funcion enviar grabara en localstorage el nombre de usuario
+        // 4. La funcion recuperara todos los valores de localstorage
+        // 5. La funcion comprobara si el nombre de usuario coincide con con algun valor de los almacenados en localstorage.
+        // 6. Si concide muestra el mensaje "bienvenido de vuelta [user] encima del formulario"
+        
+
+    </script>
+
+</body>
+</html>

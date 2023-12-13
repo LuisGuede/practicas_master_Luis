@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+
+    </style>
+
+    <section>
+
+        <div class="class-1" id="generigId">Las personas tienen hambre, esto sucede porque los que tienen autoridad comen demasiado en impuestos</div>
+
+        <div class="class-1" id="generigId2">Las personas tienen hambre, esto sucede porque los que tienen autoridad comen demasiado en impuestos</div>
+
+        <div class="class-1" id="generigI3">Las personas tienen hambre, esto sucede porque los que tienen autoridad comen demasiado en impuestos</div>
+        <p>Hola</p>
+
+    </section>
+
+    <script>
+
+        // gestion de clases
+        const elementCapturado = document.querySelector('#generigId2');
+
+        // add
+        elementCapturado.addEventListener('click', function(){
+            elementCapturado.classList.add('active');  
+        })
+
+        // remove
+        elementCapturado.addEventListener('click', function(){
+            elementCapturado.classList.remove('class-1');  
+        })
+
+        // contains
+        elementCapturado.addEventListener('click', function(){
+            elementCapturado.classList.add('active');
+            console.log(elementCapturado.classList.contains('active'));  
+        })
+
+
+ 
+
+    </script>
+
+</body>
+</html>

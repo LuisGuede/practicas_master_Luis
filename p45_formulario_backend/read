@@ -1,0 +1,10 @@
+1. Crea un formulario que envie datos a back end de forma sincrona
+
+    -nombre de usuario
+    -password
+    -boton enviar formulario
+
+2. Cundo el usuario meta el password "pwdok" desde back end comprobar el password y enviara respuesta ok
+
+3. Mientras tanto,
+    Si el usuario ya ha visitado la pagina el formulario mostrara 

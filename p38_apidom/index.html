@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <!-- el dom (document obj) es un representacion de todo lo que contiene mi codigo HTML. -->
+
+    <!-- API PARA CAPTURAR ELEMENTOS -->
+    <div class="class-1" id="generigId">Las personas tienen hambre, esto sucede porque los que tienen autoridad comen demasiado en impuestos</div>
+
+    <div class="class-1" id="generigId2">Las personas tienen hambre, esto sucede porque los que tienen autoridad comen demasiado en impuestos</div>
+
+    <div class="class-1" id="generigI3">Las personas tienen hambre, esto sucede porque los que tienen autoridad comen demasiado en impuestos</div>
+    <p>Hola</p>
+    
+    <script>
+
+        // Captura de elementos
+
+        // 1. ID
+        const idCapturado = getElementById('generigId');
+
+        // 2. CLASSNAME
+
+        const elementsClass = document.getElementsByClassName('class-1');
+
+        
+        [...elementsClass].array.forEach(element => { 
+            // esto es un array  [...elementsClass] poner el nombre en [... NAME]
+        });
+        
+        // 3.TAGNAME
+        const elementTag = document.getElementsByTagName('div');
+
+        // 4.QUERYSELECTOR
+
+        // .para clase
+        // # para id
+
+        const elementquery = document.querySelector('#generigId2');
+        // const elementquery = document.querySelector('todo los elementos pueden estar qui');
+
+        // 5.QUERYSELECTORALL
+        const alldivs = document.querySelectorAll('div');
+
+        alldivs.forEach(element => {
+            console.log(element);
+        })
+    
+        
+
+    </script>
+
+</body>
+</html>

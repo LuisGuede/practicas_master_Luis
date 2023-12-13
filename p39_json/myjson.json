@@ -1,0 +1,12 @@
+{
+    "key": "string",
+    "key2": 4,
+    "key3": true,
+    "key4": null,
+    "key5": [1, "manoli", true],
+    "key6": {
+        "name": "mike",
+        "apellido": "wasowski"
+    }
+
+}

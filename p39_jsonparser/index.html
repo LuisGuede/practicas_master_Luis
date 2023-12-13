@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // El JS no entinde JSON por lo cual hay que parcearlos
+
+        // creo un objeto JSON
+        const jsonObject01 = ["manolo",4,"lucas","juan",4]
+
+        // Parseo el objeto JSON
+        console.log(JSON.parse(jsonObject01));
+
+        // 02
+        const jsonObject02 = ["mateo","lucas","juan",4]
+
+        // 03
+        const jsonObject03 = [null, true, false, null, 345, "harry"]
+
+        // 04
+        const jsonObject04 = [null, "mac", "'holi'", "porrompompero", 345, "harry"]
+
+        // 05
+        const jsonObject05 = ["a","b","c","d","e","2","g"]
+
+        // 06
+        const jsonObject06 = [{"a":1, "b":2, "c":3}]
+
+        // 07
+        const jsonObject07 =  [{"nombre":"manolo", "apellidos":"del bombo","nacionalidad":"español cañí"}]
+
+        // 08
+        const jsonObject08 = ["murciégalo", "cobete", "almóndiga", "fragoneta", "toballa"]
+
+        // 09
+        const jsonObject09 = {"1":"2", ".":"&", "_":"3·$%/"}
+
+        // 10
+        const jsonObject10 = ["soy un cabezón"]
+
+        // 11
+        const jsonObject11 = {"mike":["es un un cabezón"]}
+
+        // 12
+        const jsonObject12 = {"mike=": ["cabezadehuevo"]}
+
+        // 13
+        const jsonObject13 = {"I love": ["lafiesta", "copas", "suspender módulos"]}
+
+        // 14
+        const jsonObject14 = {" no te olvides": "''''''''las comillas'''''''''" }
+
+    </script>
+    
+</body>
+</html>

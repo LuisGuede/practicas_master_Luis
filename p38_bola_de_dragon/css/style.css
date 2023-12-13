@@ -1,0 +1,45 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    }
+    
+  
+.container {
+    background: radial-gradient(#9c27b0, #4c49ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+  
+.character__container {
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    background-image: url('../img/goku.webp');
+    background-size: cover;
+    background-position: center;
+    border: 5px solid orange;
+    border-radius: 10px;
+    }
+
+img {
+    width: 100%; 
+    }
+
+.button__container {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 50px;
+    }
+  
+button {
+    font-size: 18px;
+    background-color: #f75700;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    }
+    

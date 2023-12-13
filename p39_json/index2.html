@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Import JSON
+        async function logJson(){
+
+            // 1 descarga del JSON
+            const response = await fetch('https://world.openfoodfacts.org/api/v0/product/5060292302201.json');
+
+            // 2 convierte JSON en obj JS
+            const data = await response.json();
+
+            console.log(data);
+        }
+
+
+        function logJson2(){
+            fetch('https://world.openfoodfacts.org/api/v0/product/5060292302201.json').them((response)=>{
+                const data = response.json().them(data =>{
+                console.log(data);
+                })
+            })
+        }
+
+        logJson2();
+
+        fetch('jsonReceive.php',{
+            method: 'POST',
+            body:JSON.stringify({
+                name: "mike",
+                apellido: "wasowski"
+            }),
+            headers:{'content-type': 'application/json; charset=UFT-8'}
+        })
+
+    </script>
+</body>
+</html>

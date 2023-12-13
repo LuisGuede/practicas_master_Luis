@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatos</title>
+</head>
+<body>
+
+    <div class="gatete__grid"></div>
+
+    <style>
+        img { width: 100%; 
+            display: block; 
+            object-fit: cover; 
+            height: 100%;
+        }
+        
+        .gatete__grid {
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(2,250px);
+       }
+
+    </style>
+
+    <script>
+
+        const gateteContainer = document.querySelector('.gatete__grid');
+
+        // funcion para crear los gatos
+        function createGatetes(gatetesObj){
+
+            gatetesObj.forEach(gateteItem => {
+                const gatete = document.createElement('img');
+                gatete.src = gateteItem.url;
+                gateteContainer.appendChild(gatete);
+            });
+
+            sendGateteThree(gatetesObj[2]) // llamo la funcion para enviar gato 3 (array)
+        }
+
+        // funcion para enviar gato 3
+        function sendGateteThree(gatetesObj){
+            return fetch('backend/jasonReceive.php',{
+                method: 'POST',
+                body: JSON.stringify(gateteObject)
+            }) 
+            .then(response => response.json())
+            .then(data => {
+                const jsonRecibido = JSON.parse(data)
+                document.body.innerHTML += jsonRecibido.id
+            })
+      
+        }
+
+
+
+
+
+        // obtenemos gatos de forma asincrona
+        fetch('https://api.thecatapi.com/v1/images/search? api_key=live_iEy9MyewocGT6dvM32He4CGRByHy6n7YBABu38zgv843N0mLT7g13XBu93NBle1u&limit=10')
+            // espero a que el recurso este disponible y entonces.....
+            .then( response => response.json() )
+            .then( data => createGatetes(data) )
+       
+    </script>
+
+</body>
+</html>
