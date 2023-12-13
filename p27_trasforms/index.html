@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+
+        .container{
+            height: 100vh;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .transformers{
+            width: 400px;
+            height: 400px;
+            font-size: 4rem;
+            color: white;
+            background-color: rgb(255, 0, 34);
+        }
+
+        .transformers-type{
+            /* transform: nombre(valor) nombre2(valor)......*/
+            /* transform: rotate(45deg); */
+            /* transform: rotateY(3.5rad); */
+            /* transform: rotateX(3.5rad) rotateY(10deg); */
+
+            /* skew X and Y*/
+            /* transform: skew(40deg); */
+            /* transform: skew(40deg, 40deg); */
+
+            /* traslate */
+            /* transform: translate(300px, -40);
+            transform: translateX(200px) translateY(300px); */
+            /* nota: traslate mantiene el objeto en el mismo lugra apesar de moverlo */
+
+            /* scale */
+            /* transform: scale(0.5, 3); */
+            /* aumenta el tamaño de las cosas */
+
+            transform: matrix();
+        }
+    </style>
+
+    <div class="container">
+    <div class="transformers transformers-type">
+        OPTIMUS PRIME
+    </div>
+    </div>
+
+</body>
+</html>

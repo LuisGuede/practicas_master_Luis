@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex - colorama</title>
+</head>
+
+<!-- felx va de padres a hijos -->
+<body>
+    <style>
+        * { padding: 0; margin:0; box-sizing: border-box; font-size: 24px; font-family: Arial, Helvetica, sans-serif;}
+
+
+        .flex__container {
+            flex-flow: row nowrap;
+            display: flex;
+            height: 100vh;
+
+        }
+
+        .flex__item {
+
+            flex: 0 1 20%;
+        }
+
+        .flex__item--1{
+            order: 1; 
+        }
+
+        .flex__item--2{
+            order: 2;   
+        }
+
+        .flex__item--3{
+            order: 3;   
+        }
+
+        .flex__item--4{
+            order: 4;  
+        }
+
+        .flex__item--5{
+            order: 5;        
+        }
+
+    </style>
+
+    <!-- CONTENT -->
+
+    <!-- padre -->
+    <div class="flex__container">
+    <!-- padre -->
+
+        <!-- hijos -->
+        <div class="flex__item flex__item--1">1</div>
+        <div class="flex__item flex__item--2">2</div>
+        <div class="flex__item flex__item--3">3</div>
+        <div class="flex__item flex__item--4">4</div>
+        <div class="flex__item flex__item--5">5</div>
+        <!-- hijos -->
+
+    </div>
+    <!-- /CONTENT -->
+
+    <script>
+        const flexItems = document.querySelectorAll('.flex__item');
+        flexItems.forEach((flexItem,index) => {
+            const color = 'hsl('+ Math.floor(280 -(index*(280/flexItems.length)))+', 100%, 50%)';
+            flexItem.style.background = color;
+        });   
+    </script>
+</body>
+</html>
+

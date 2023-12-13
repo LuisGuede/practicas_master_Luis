@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<style>
+    .mydiv{
+        background-color: blueviolet;
+        padding: 30px;
+        border: 2px solid rgb(39, 39, 37);
+        cursor: pointer;
+        color: white;
+        transition: all 1s ease-in-out;
+    }
+
+    .active{
+        background-color: brown;
+        padding: 30px;
+        color: black;
+        transition: all 1s ease-in-out;
+        /* transition-delay: 2s; */
+        /* transition-timing-function: cubic-bezier(.03,1.1,.93,-0.03); */
+        /* transition-timing-function: steps(4, jump-start); */
+        
+        /* transition-property: color; */
+    }
+
+</style>
+    
+<div class="mydiv">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus vitae animi cupiditate laudantium natus labore ipsam reiciendis tempora unde atque, sit odio, perferendis temporibus molestias optio corporis culpa accusamus nam!</div>
+
+<script>
+    document.body.addEventListener('click', function(){
+        document.querySelector('.mydiv').classList.add('active');
+    })
+</script>
+
+
+</body>
+</html>

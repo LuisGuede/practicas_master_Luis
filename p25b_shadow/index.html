@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .shadow{
+            flex-basis: 40%;
+            height: 500px;
+            background-color: blue;
+            /* box-shadow: 10px 20px 5px cornflowerblue; */
+            box-shadow: 0px 0px 40px 5px black;
+        }
+
+        .text-shadow{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 50px;
+
+            text-shadow: 20px 10px 5px red;
+        }
+    </style>
+
+    <div class="container">
+        <div class="shadow"></div>
+    </div>
+
+    <div class="container">
+        <div class="text-shadow"></div>
+    </div>
+</body>
+</html>

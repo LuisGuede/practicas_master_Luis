@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admision GYM</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <form action="from_recive.php" name="usuario_wp" enctype="application/x-www-form-urlencoded" method="post">
+
+        <h1>GYM RAT <br> MEMBERSHIP</h1>
+        
+        <div class="legend_title">
+            <Legend>Nombre y Apellido</Legend>
+        </div>
+
+        <div class="Nombre_Apellido">
+            <label for="nameImput">Nombre</label>
+            <input type="text" id="nameImput" name="user_name" size="30" maxlength="30">
+            </div>
+
+            <label for="surnameImput">Apellido</label>
+            <input type="text" id="surnameImput" name="user_surname" size="30" maxlength="30">
+        </div>
+
+        <fieldset class="checkbox_inline">
+
+            <div class="legend_title"> 
+            <legend>Tienes algun problema?</legend>
+            </div>
+
+            <div>
+            <label for="mindImput">Soy mayor de 18</label>
+            <input type="checkbox" name="user_mindok" id="mindImput" checked>
+            </div>
+
+            <div>
+            <label for="ageImput">Sim problemas de corazon</label>
+            <input type="checkbox" name="user_mindok" id="ageImput">
+            </div>
+
+            <div>
+            <label for="ageImput">En pleno uso de mis facultades mentales</label>
+            <input type="checkbox" name="user_mindok" id="ageImput">
+            </div>
+
+        </fieldset>
+
+        <fieldset class="sexo_list">
+            <div class="legend_title">
+            <legend>Identidad de Genero</legend>
+            </div>
+
+            <label for="manInput">Hombre</label>
+            <input type="radio" name="user_sex" id="manInput">
+
+            <label for="womanInput">Mujer</label>
+            <input type="radio" name="user_sex" id="womanInput">
+
+            <label for="otherInput">Otro</label>
+            <input type="radio" name="user_sex" id="otherInput">
+        </fieldset>
+
+        <label for="memberTypeInput" class="legend_title">Elige tu deporte</label>
+            <select name="user_level" id="memberTypeInput">
+                <option value="premium_100"
+                >Crossfit
+            </option>
+                <option value="medium_50"
+                >Spinning
+            </option>
+                <option value="standard_40"
+                >Kung fu
+            </option>
+            </select>
+
+        <label for="comentsImput" class="legend_title">Comentarios</label>
+            <textarea name="user_comments" id="commentsImput" placeholder="escribe tus comentarios"></textarea>
+
+        <input type="submit" value="Enviar">
+
+        <div class="password">
+            <input type="password" value="user_password" id="myInput"><br><br>
+        <div class="password_Show">
+            <input type="checkbox" onclick="myFunction()">Show Password
+        </div>
+        </div>
+
+<script>
+    function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    }
+    </script>
+
+
+    </form>
+</body>
+
+</html>

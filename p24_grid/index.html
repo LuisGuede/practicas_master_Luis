@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+
+        /* .grid__container{
+            display: grid; */
+            /* grid-template-columns: 100px 200px 300px; */
+            /* grid-template-columns: 1fr 2fr 1fr; */
+            /* fr son fraciones */
+            /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+            /* grid-template-rows: 0.5fr 1fr 1.5fr 2fr 1.5fr; */
+            /* grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); */
+            /* el auto-fill y auto-fit son importantes para el responsive pero tengo que indicarle el minmax (el minimo, y el maximo*/
+            /* gap: 10px;
+            height: 100px; */
+        /* } */
+
+        .grid__container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            height: 400px;
+            justify-items: stretch;
+            align-items: stretch;
+    
+
+        }
+
+        .grid__item{
+        
+            height: 150px;
+        }
+
+    </style>
+
+    <div class="grid__container">
+        <div class="grid__item">1</div>
+        <div class="grid__item">2</div>
+        <div class="grid__item">3</div>
+        <div class="grid__item">4</div>
+        <div class="grid__item">5</div>
+        <div class="grid__item">6</div>
+        <div class="grid__item">7</div>
+        <div class="grid__item">8</div>
+        <div class="grid__item">9</div>
+        <div class="grid__item">10</div>
+        <div class="grid__item">11</div>
+        <div class="grid__item">12</div>
+        <div class="grid__item">13</div>
+        <div class="grid__item">14</div>
+        <div class="grid__item">15</div>
+        <div class="grid__item">16</div>
+    </div>
+    
+
+<script>       
+
+const flexItems = document.querySelectorAll('.grid__item');
+    flexItems.forEach((flexItem,index) => {
+        const color = 'hsl('+ Math.floor(280 -(index*(280/flexItems.length)))+', 100%, 50%)';
+        flexItem.style.background = color;
+    });   
+</script>
+    
+</body>
+</html>

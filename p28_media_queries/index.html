@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" media="(max-width:960px)" href="tablet.css">
+    <link rel="stylesheet" media="(max-width:480)">
+</head>
+<body>
+
+    <style>
+
+        .frase__laotse{
+            font-size: 5rem;
+            color: blue;
+        }
+
+
+        @media screen and (max-width: 500px) {
+            .frase__laotse{
+                color: green
+            }
+        }
+
+        /* 
+        WIDTH
+            min-width: activa aestilos si el tamaño es MAYOR al definido (phone)
+            max-width: activa estilos si el tamaño es MENOR al definido (desktop)
+
+        HEIGHT
+            min-height: activa aestilos si el tamaño es MAYOR al definido
+            max-height: activa estilos si el tamaño es MENOR al definido
+
+        ASPECTO_RATIO
+             min-aspect-ratio: activa si el ratio es mayor que
+             max-aspecto-ratio: activa si el ratio es menor que
+
+        ORIENTATION (for moviles)
+            portrait: vertical
+            landscape: horizontal
+
+        RESOLUTION (dpi)
+            por ejemplo: min-resolution 100dpi
+            min-resolution
+            max-resolution
+
+            Full HD -> 1920 x 1080
+            web -> 1440 x 900
+            HD -> 1280
+            TABLET -> 768 / 960
+            MOBILE -> 480 / 600
+            MINIMO -> 320 
+
+            the best recomendation is work with 1440 X 960
+
+
+        */
+
+    </style>
+  
+    <p class="frase__laotse">Si no puedes avanzar una pulgada, retrocede un pie.</p>   
+
+</body>
+</html>

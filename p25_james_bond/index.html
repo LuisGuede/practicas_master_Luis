@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Bones</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="mask">
+            <div class="circle"></div>
+        </div>
+        <div class="photo">
+            <!-- foto -->
+        </div>
+    </div>
+    <div class="start-btn">
+        START
+    </div>
+
+    <script>
+        
+    // 1. Captura de elementos
+        const starBtn = document.querySelector('.start-btn');
+        const circle = document.querySelectorAll('.circle');
+
+     // 2.Generacionn de evento sobre la variable
+        starBtn.addEventListener('click')
+
+      // Ocultar el botón
+      starBtn.style.display = 'none';
+
+      // Mostrar la bola
+      circle.style.display = 'block';
+    </script>
+    
+</body>
+
+</html>

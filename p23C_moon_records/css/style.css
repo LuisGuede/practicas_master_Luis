@@ -1,0 +1,282 @@
+*{ padding: 0; margin:0; box-sizing: border-box; }
+
+body{
+    height: 1366px;
+    width: 100%;
+    line-height: 1.5;
+}
+
+/* Header */
+
+header {
+    background-color: transparent;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.header-shape{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #ccc;
+    text-transform: uppercase;
+ 
+}
+
+.nav-item {
+    padding: 40px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+/* Header */
+
+/* Background */
+
+.background-section {
+    background-color: #494949;
+    height: 700px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+/* Background */
+
+/* Moon Records info */
+
+.moon-info-section {
+    background-color: #fff;
+    padding: 100px;
+    margin-top: 600px;
+    margin-bottom: 50px;;
+    
+}
+
+.moon-info-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.moon-info-section h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.moon-info-section-container-column {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    color: black;
+}
+
+/* Moon Records info */
+
+/* musica */
+
+.music-genres {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.music-genres-container {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-sub-column--1, .container-sub-column--4 {
+    height: 400px;
+    background-color: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-sub-column--2, .container-sub-column--3 {
+    height: 400px;
+    background-color: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* musica */
+
+/* Pure music */
+
+.pureMusic-section{
+    display: flex;
+    justify-content: center;
+    padding: 200px;
+}
+
+.pureMusic_columna{
+    padding: 20px;
+}
+
+.pureMusic_columna--1{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.pureMusic_columna--2{
+    width: 40%;
+}
+
+.puremusic_title{
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.pureMusic_columnaOne_title{
+    margin-top: 0;
+    text-align: right;
+}
+
+
+/* Pure music */
+
+/* slide */
+
+.cool-slide{
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.skewed {
+    position: absolute;
+    width: 100%;
+    height: 1%;
+    background: #d1d1d1;
+    z-index: 1;
+    transform: skewY(4deg);
+    transform-origin: top right;
+  }
+
+/* slide */
+
+/* best music */
+
+.bestMusic-section{
+    display: flex;
+    justify-content: center;
+    padding: 200px;
+}
+
+.bestMusic_columna{
+    padding: 20px;
+}
+
+.bestMusic_columna--2{
+    width: 12%;
+    display: flex;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+.bestMusic_columna--1{
+    width: 40%;
+    padding-top: 20px;
+}
+
+
+.bestMusic_columnaTwo_title{
+    margin-top: 0;
+    text-align: right;
+}
+
+.bestMusic_text{
+    text-align: right;
+    padding-top: 10%;
+}
+
+/* best music */
+
+/* footer */
+
+.footer_shape{
+    background: #494949;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    position:relative;
+}
+
+footer:before {
+    content:"";
+    position:absolute;
+    top:-60px;
+    height:60px;
+    left:0;
+    right:0;
+    background:linear-gradient(to bottom right, transparent 49%, #494949 50%);
+   }
+ 
+
+.footer_logo{
+    padding-right: 30px;
+    padding-left: 30px;
+    
+}
+
+.footer_logo_shape{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    text-transform: uppercase;
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_colums{
+    color: rgb(24, 24, 24);
+    display: contents;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.footer_colums--1{
+    margin: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer_colums--2{
+    margin: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer_colums--3{
+    margin: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* footer */
